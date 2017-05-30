@@ -24,6 +24,7 @@ def plantEdge(image):
     opening = cv2.dilate(opening, None)
     #cv2.imshow("opening", opening)
     #This is a test
+	# This is programming stuff
 
     #Detect edges from the final morphed img
     edges = cv2.Canny(opening,800,800)
