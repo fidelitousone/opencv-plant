@@ -22,6 +22,7 @@ def plantEdge(image):
     opening = cv2.morphologyEx(thresh1, cv2.MORPH_OPEN,kernal2)
     opening = cv2.dilate(opening, None)
     #cv2.imshow("opening", opening)
+    #This is a test
 
     #Detect edges from the final morphed img
     edges = cv2.Canny(opening,800,800)
@@ -31,7 +32,7 @@ def plantEdge(image):
 
     #ret,dst = cv2.threshold(edges,127,255,cv2.THRESH_BINARY_INV)
     cv2.imshow("edges", edges)
-    
+
     #Press Q to close all windows
     if cv2.waitKey(1) & 0xFF == ord('q'):
         cv2.destroyAllWindows()
@@ -41,4 +42,3 @@ def plantEdge(image):
 img=cv2.imread('basilTop.jpg')
 
 plantEdge(img)
-
