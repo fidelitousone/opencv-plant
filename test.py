@@ -18,6 +18,7 @@ def plantEdge(image):
     #cv2.imshow("thresh1", thresh1)
 
     #apply opening morph to remove smaller noise
+    #Using
     kernal2 = np.ones((6,6),np.uint8)
     opening = cv2.morphologyEx(thresh1, cv2.MORPH_OPEN,kernal2)
     opening = cv2.dilate(opening, None)
