@@ -35,10 +35,21 @@ def plantEdge(image):
 
     
     
-img = cv2.imread('lettuce.jpg')
+img = cv2.imread('5plantDifferentS.png')
+edges = cv2.Canny(img,100,100)
 
-edges = plantEdge(img)
-cv2.imshow("edges", edges)
+plant1 = edges[0:100, 0:100]
+plant2 = edges[200:300, 0:100]
+plant3 = edges[0:100, 0:100]
+plant4 = edges[0:100, 0:100]
+plant5 = edges[0:100, 0:100]
+
+#edges = plantEdge(img)
+cv2.imshow("plant1", plant1)
+cv2.imshow("plant2", plant2)
+cv2.imshow("plant3", plant3)
+cv2.imshow("plant4", plant4)
+cv2.imshow("plant5", plant5)
 
 #Press Q to close all windows
 if cv2.waitKey(1) & 0xFF == ord('q'):
