@@ -18,10 +18,10 @@ def plantEdge(image,noise_flag):
         opening = cv2.dilate(opening, None)
         edges = cv2.Canny(opening,100,100)
         return edges
-        
-    #Detect edges from the final morphed img
-    edges = cv2.Canny(thresh1,100,100)
-    return edges
+    elif noise_flag ==0:
+        #Detect edges from the final morphed img
+        edges = cv2.Canny(thresh1,100,100)
+        return edges
 
 #This function creates the square around the plant and will also be used
 #to get the height/width of the plant
@@ -72,7 +72,7 @@ def square(image,max_image_size):
 
 #loads image into program
 img = cv2.imread('5plantDifferentS.png')
-edges = cv2.Canny(img,100,100)  #Perform Canny Edge Detection
+edges = plantEdge(img,0)  #Perform Canny Edge Detection
 
 #Crop each individual plant
 plant1 = edges[0:100, 0:100]
